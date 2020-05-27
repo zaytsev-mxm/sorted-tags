@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.tags-root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.tag {
+  padding: 10px;
+  margin: 5px;
+  background: #ccc;
+  border-radius: 5px;
+  color: white;
+  line-height: 1rem;
+}
+
+.tag.category11 {
+  background: crimson;
+}
+
+.tag.category12 {
+  background: darkorchid;
+}
+
+.tag.category13 {
+  background: burlywood;
+}

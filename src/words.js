@@ -1,0 +1,15 @@
+const TEXT = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec mauris et mauris maximus dignissim eu et mi. Ut erat felis, eleifend vel diam ut, pellentesque pretium sem. Nullam dignissim ante orci, in luctus mi faucibus in. Nam vel venenatis odio, eu congue metus. Phasellus tincidunt elit in nunc suscipit mollis. Vivamus tristique dignissim lorem, pellentesque porta nunc faucibus id. Duis nec varius mauris. Duis dignissim volutpat consequat. Nam auctor urna quis porta fringilla. Duis elementum fringilla fringilla. Aenean dolor nulla, sollicitudin nec viverra quis, blandit sit amet risus. In ullamcorper nec nunc id feugiat.
+
+Etiam fermentum nulla id odio lacinia placerat. Donec mollis nulla ut fringilla iaculis. Sed condimentum purus neque, et euismod enim venenatis nec. Nulla vestibulum fermentum turpis sed eleifend. Nunc vitae consectetur elit. Fusce risus ex, condimentum nec diam lacinia, condimentum congue enim. Nullam eget posuere lectus. Sed purus velit, feugiat non tortor sit amet, facilisis volutpat lorem. Nam laoreet felis est, eget dictum justo facilisis eget.
+
+Vivamus efficitur id elit a varius. In nec ex ac massa consequat imperdiet. Mauris sagittis neque vel volutpat commodo. Nullam non porta ligula. Mauris posuere nulla lorem. Ut convallis ligula in velit pellentesque euismod. Nunc nisl quam, posuere quis interdum eu, commodo et sapien. In pellentesque sapien condimentum egestas porta. Praesent pharetra sem a urna venenatis auctor.
+
+Cras velit odio, congue id egestas vitae, sagittis id sem. Proin dapibus non turpis vel dapibus. Pellentesque dignissim eros et augue pulvinar, ac venenatis metus dapibus. In cursus aliquet lorem. Donec luctus odio eu erat sodales rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec molestie erat. Curabitur ultrices mauris pellentesque, tempus neque a, lacinia neque. Mauris pulvinar massa a nisi consequat pretium. Nullam metus velit, pulvinar id lectus et, sagittis laoreet neque. Morbi quis tellus id nisl faucibus laoreet vitae ac nisi. Sed cursus semper pulvinar.
+
+Etiam molestie arcu consequat congue rutrum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut tincidunt condimentum commodo. Fusce sagittis nisi quam. Suspendisse sed laoreet sem, ut mattis quam. Phasellus volutpat ut quam ac ornare. Aenean eget pulvinar lorem. Praesent lacinia vehicula leo nec pellentesque. Aenean sit amet viverra nunc. Etiam finibus nisi non justo fermentum, quis congue lacus viverra. Maecenas consequat congue dui vitae sollicitudin. Nullam erat ipsum, ullamcorper a pulvinar accumsan, egestas sed eros. Curabitur lobortis tortor ipsum, nec sagittis metus sagittis nec. Nunc posuere blandit est ut dignissim.
+`;
+
+const WORDS = TEXT.split(/\s/).filter(word => /^\w{3,}$/.test(word)).map(word => word.toLowerCase());
+
+export default WORDS;
