@@ -9,6 +9,22 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getPositionForLastElements(arr) {
+  const pivot = getRandomInt(0, arr.length - 1);
+  const currentEl = arr[pivot];
+  const prevEl = arr[pivot - 1];
+  const currentWeight = getTagWeight(currentEl);
+  const prevWeight = getTagWeight(prevEl);
+
+  const isSiblingsAppropriate = currentWeight > 0 && prevWeight > 0;
+
+  if (isSiblingsAppropriate) {
+    return pivot;
+  }
+
+  return getPositionForLastElements(arr);
+}
+
 function getSortedTags(list) {
   const arr = [...list].sort((a, b) => {
     return getTagWeight(b) - getTagWeight(a);
@@ -24,7 +40,7 @@ function getSortedTags(list) {
       [weight]: [...current, el],
     };
   }, {});
-  const parts = Object.values(partsObj);
+  let parts = Object.values(partsObj);
   const result = [];
 
   let i = 0;
@@ -33,7 +49,13 @@ function getSortedTags(list) {
     const partType = getTagWeight(part[0]);
     groupSize = partType === -1 ? 1 : getRandomInt(1, 2);
     const nums = part.splice(0, groupSize);
-    result.push(...nums);
+    if (parts.length === 1) {
+      const positionForLastElements = getPositionForLastElements(result);
+      result.splice(positionForLastElements, 0, ...nums);
+    } else {
+      result.push(...nums);
+    }
+    parts = parts.filter(part => part.length);
     i = i + 1 < parts.length ? i + 1 : 0;
   }
 
